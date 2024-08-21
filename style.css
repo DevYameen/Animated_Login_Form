@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    background-color: #0c1022;
+}
+
+.login_form_container {
+    position: relative;
+    width: 400px;
+    height: 470px;
+    max-width: 400px;
+    max-height: 470px;
+    background: black;
+    border-radius: 50px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.login_form_container::before,
+.login_form_container::after {
+    position: absolute;
+    width: 170%;
+    height: 170%;
+    content: '';
+    background-image: conic-gradient(transparent, transparent, transparent, fuchsia);
+    animation: rotate_border 6s linear infinite;
+}
+
+.login_form_container::after {
+    background-image: conic-gradient(transparent, transparent, transparent, green);
+    animation-delay: -3s;
+}
+
+@keyframes rotate_border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.login_form {
+    position: absolute;
+    background-color: #0c1022;
+    border-radius: 50px 5px;
+    inset: 5px;
+    padding: 50px 40px;
+    z-index: 10;
+    color: lime;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+
+.input_group {
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input_group + .input_group {
+    margin-top: 40px; /* Space between username and password fields */
+}
+
+.input_text {
+    width: 95%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid lime;
+    font-size: 18px;
+    padding-left: 10px;
+    color: lime;
+    transition: border-color 0.3s;
+}
+
+.input_text:focus {
+    border-color: #00ff00;
+}
+
+.button_group {
+    margin-top: 50px; /* Space between password field and submit button */
+    text-align: center;
+}
+
+.submit_button {
+    background-color: lime;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit_button:hover {
+    background-color: #00ff00;
+    transform: scale(1.05);
+}
+
+.footer {
+    margin-top: 40px; /* Space between submit button and footer links */
+    text-align: center;
+}
+
+.footer a {
+    color: lime;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #00ff00;
+}
